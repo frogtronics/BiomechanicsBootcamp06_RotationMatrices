@@ -7,6 +7,7 @@ Two ways to download the material:
 1. Download the whole chapter (recommended)
 -Click on the desired chapter (=github repository)
 -Click on the Download ZIP button, right side
+
 2. Download single files(s)
 -Click on the desired chapter (=github repository)
 -Click on the desired file
