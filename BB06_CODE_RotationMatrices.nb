@@ -1,0 +1,489 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     17224,        480]
+NotebookOptionsPosition[     16693,        458]
+NotebookOutlinePosition[     17048,        474]
+CellTagsIndexPosition[     17005,        471]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"transform3x3", "[", 
+    RowBox[{"Rmatrix3x3_", ",", "Pnx3_"}], "]"}], ":=", 
+   RowBox[{"Transpose", "[", 
+    RowBox[{"Rmatrix3x3", ".", 
+     RowBox[{"Transpose", "[", "Pnx3", "]"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"frameDraw", "[", "frame_", "]"}], ":=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"frame", "[", 
+      RowBox[{"[", "1", "]"}], "]"}], ",", 
+     RowBox[{"frame", "[", 
+      RowBox[{"[", "4", "]"}], "]"}], ",", 
+     RowBox[{"frame", "[", 
+      RowBox[{"[", "2", "]"}], "]"}], ",", 
+     RowBox[{"frame", "[", 
+      RowBox[{"[", "4", "]"}], "]"}], ",", 
+     RowBox[{"frame", "[", 
+      RowBox[{"[", "3", "]"}], "]"}]}], "}"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.63292248254965*^9, 3.6329224975396137`*^9}, {
+   3.632922528107793*^9, 3.632922557825625*^9}, 3.632922745614666*^9, {
+   3.632923453130899*^9, 3.632923453994399*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"R", "=", 
+   RowBox[{"RotationMatrix", "[", 
+    RowBox[{
+     RowBox[{"Pi", "/", "2"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "0"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"xyzvectors", "=", 
+   RowBox[{"IdentityMatrix", "[", "3", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"xyzframe0", "=", 
+   RowBox[{"Join", "[", 
+    RowBox[{"xyzvectors", ",", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0", ",", "0"}], "}"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"forplotting0", "=", 
+    RowBox[{"frameDraw", "[", "xyzframe0", "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"range", "=", "3"}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{"xyz", " ", "range"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"XYZrange", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "range"}], ",", "range"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "range"}], ",", "range"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "range"}], ",", "range"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"pointplot0", "=", 
+   RowBox[{"ListPointPlot3D", "[", "forplotting0", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"lineplot0", "=", 
+   RowBox[{"Graphics3D", "[", 
+    RowBox[{"{", 
+     RowBox[{"Red", ",", 
+      RowBox[{"Line", "[", "forplotting0", "]"}]}], "}"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"frameplot", "=", 
+   RowBox[{"Show", "[", 
+    RowBox[{"pointplot0", ",", "lineplot0", ",", 
+     RowBox[{"PlotRange", "\[Rule]", "range"}], ",", 
+     RowBox[{"BoxRatios", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", " ", "1", ",", " ", "1"}], "}"}]}]}], "]"}]}], 
+  "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.632922625373671*^9, 3.632922682662624*^9}, {
+   3.632922768013095*^9, 3.6329228068314323`*^9}, {3.6329234122552967`*^9, 
+   3.632923414893958*^9}, {3.63292345864258*^9, 3.632923756604752*^9}, {
+   3.632923822267058*^9, 3.632923913517788*^9}, {3.632923956094174*^9, 
+   3.632923958917653*^9}, {3.6329239892705307`*^9, 3.632923995597581*^9}, {
+   3.632924085188735*^9, 3.632924088378787*^9}, {3.632924128419088*^9, 
+   3.6329241550414886`*^9}, 3.632980424119858*^9, {3.632982619259605*^9, 
+   3.6329826269302464`*^9}}],
+
+Cell[BoxData[
+ Graphics3DBox[{
+   {RGBColor[0.3315753, 0.4561011, 0.6388182], 
+    Point3DBox[{{1., 0., 0.}, {0., 0., 0.}, {0., 1., 0.}, {0., 0., 0.}, {0., 
+     0., 1.}}]}, 
+   {RGBColor[1, 0, 0], 
+    Line3DBox[{{1, 0, 0}, {0, 0, 0}, {0, 1, 0}, {0, 0, 0}, {0, 0, 1}}]}},
+  Axes->True,
+  AxesLabel->{None, None, None},
+  BoxRatios->{1, 1, 1},
+  FaceGridsStyle->Automatic,
+  PlotRange->3,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.02]}, {Automatic, Automatic}},
+  Ticks->{Automatic, Automatic, Automatic},
+  ViewPoint->{1.3, -2.4, 2.},
+  ViewVertical->{0., 0., 1.}]], "Output",
+ CellChangeTimes->{
+  3.632923959640902*^9, 3.6329239961988297`*^9, 3.632924089089517*^9, {
+   3.6329241321242123`*^9, 3.632924155418399*^9}, {3.6329804197540903`*^9, 
+   3.632980424694364*^9}, 3.6329826306809397`*^9, 3.633012473688189*^9, 
+   3.633096800288137*^9}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"r1", "=", 
+   RowBox[{"RotationMatrix", "[", 
+    RowBox[{"1.2", ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "0"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"xyzframe1", "=", 
+   RowBox[{"transform3x3", "[", 
+    RowBox[{"r1", ",", "xyzframe0"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"forplotting1", "=", 
+   RowBox[{"frameDraw", "[", "xyzframe1", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"pointplot1", "=", 
+   RowBox[{"ListPointPlot3D", "[", "forplotting1", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"lineplot1", "=", 
+   RowBox[{"Graphics3D", "[", 
+    RowBox[{"{", 
+     RowBox[{"Blue", ",", 
+      RowBox[{"Line", "[", "forplotting1", "]"}]}], "}"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Show", "[", 
+  RowBox[{"frameplot", ",", "pointplot1", ",", "lineplot1", ",", 
+   RowBox[{"PlotRange", "\[Rule]", "range"}], ",", 
+   RowBox[{"BoxRatios", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", " ", "1", ",", " ", "1"}], "}"}]}]}], "]"}]}], "Input",\
+
+ CellChangeTimes->{{3.632924011958089*^9, 3.6329241444482527`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"interactive", " ", "version"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"axes", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}]}], ";"}], 
+   RowBox[{"(*", 
+    RowBox[{"x", ",", " ", 
+     RowBox[{
+     "y", " ", "and", " ", "z", " ", "axes", " ", "so", " ", "we", " ", "can",
+       " ", "easily", " ", "pick", " ", "which", " ", "axis", " ", "to", " ", 
+      "rotate", " ", "about"}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"r1", "=", 
+       RowBox[{"RotationMatrix", "[", 
+        RowBox[{"angle", ",", 
+         RowBox[{"axes", "[", 
+          RowBox[{"[", "a", "]"}], "]"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"xyzframe1", "=", 
+       RowBox[{"transform3x3", "[", 
+        RowBox[{"r1", ",", "xyzframe0"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"forplotting1", "=", 
+       RowBox[{"frameDraw", "[", "xyzframe1", "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"pointplot1", "=", 
+       RowBox[{"ListPointPlot3D", "[", "forplotting1", "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"lineplot1", "=", 
+       RowBox[{"Graphics3D", "[", 
+        RowBox[{"{", 
+         RowBox[{"Blue", ",", 
+          RowBox[{"Line", "[", "forplotting1", "]"}]}], "}"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Show", "[", 
+       RowBox[{"frameplot", ",", "pointplot1", ",", "lineplot1", ",", 
+        RowBox[{"PlotRange", "\[Rule]", "range"}], ",", 
+        RowBox[{"BoxRatios", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"1", ",", " ", "1", ",", " ", "1"}], "}"}]}]}], "]"}]}], 
+     "\[IndentingNewLine]", ",", 
+     RowBox[{"{", 
+      RowBox[{"angle", ",", "0", ",", "Pi"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"a", ",", "1", ",", "3", ",", "1"}], "}"}]}], "]"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.632924302740067*^9, 3.632924338459269*^9}, {
+  3.632924372508362*^9, 3.632924436326191*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"multiple", " ", "rotations"}], "|"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"axes", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}]}], ";"}], 
+   RowBox[{"(*", 
+    RowBox[{"x", ",", " ", 
+     RowBox[{
+     "y", " ", "and", " ", "z", " ", "axes", " ", "so", " ", "we", " ", "can",
+       " ", "easily", " ", "pick", " ", "which", " ", "axis", " ", "to", " ", 
+      "rotate", " ", "about"}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"ra", "=", 
+       RowBox[{"RotationMatrix", "[", 
+        RowBox[{"anglea", ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "]"}]}], ";", 
+      RowBox[{"(*", 
+       RowBox[{
+        RowBox[{"third", " ", "rotation"}], ",", " ", "z"}], "*)"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"xyzframe1a", "=", 
+       RowBox[{"transform3x3", "[", 
+        RowBox[{"ra", ",", "xyzframe0"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"rb", "=", 
+       RowBox[{"RotationMatrix", "[", 
+        RowBox[{"angleb", ",", 
+         RowBox[{"{", 
+          RowBox[{"1", ",", "0", ",", "0"}], "}"}]}], "]"}]}], ";", 
+      RowBox[{"(*", 
+       RowBox[{
+        RowBox[{"second", " ", "rotation"}], ",", " ", "x"}], "*)"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"xyzframe1b", "=", 
+       RowBox[{"transform3x3", "[", 
+        RowBox[{"rb", ",", "xyzframe1a"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"rc", "=", 
+       RowBox[{"RotationMatrix", "[", 
+        RowBox[{"anglec", ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "]"}]}], ";", 
+      RowBox[{"(*", 
+       RowBox[{
+        RowBox[{"third", " ", "rotation"}], ",", " ", "z"}], "*)"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"xyzframe1", "=", 
+       RowBox[{"transform3x3", "[", 
+        RowBox[{"rc", ",", "xyzframe1b"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"forplotting1", "=", 
+       RowBox[{"frameDraw", "[", "xyzframe1", "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"pointplot1", "=", 
+       RowBox[{"ListPointPlot3D", "[", "forplotting1", "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"lineplot1", "=", 
+       RowBox[{"Graphics3D", "[", 
+        RowBox[{"{", 
+         RowBox[{"Blue", ",", 
+          RowBox[{"Line", "[", "forplotting1", "]"}]}], "}"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Show", "[", 
+       RowBox[{"frameplot", ",", "pointplot1", ",", "lineplot1", ",", 
+        RowBox[{"PlotRange", "\[Rule]", "range"}], ",", 
+        RowBox[{"BoxRatios", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"1", ",", " ", "1", ",", " ", "1"}], "}"}]}]}], "]"}]}], 
+     "\[IndentingNewLine]", ",", 
+     RowBox[{"{", 
+      RowBox[{"anglea", ",", "0", ",", "Pi"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"angleb", ",", "0", ",", "Pi"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"anglec", ",", "0", ",", "Pi"}], "}"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.6329244834532948`*^9, 3.6329247291563*^9}, {
+  3.632980456790258*^9, 3.632980461092965*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Multiple", " ", 
+    RowBox[{"rotations", ":", " ", 
+     RowBox[{"alternative", " ", "method"}]}]}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"axes", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}]}], ";"}], 
+   RowBox[{"(*", 
+    RowBox[{"x", ",", " ", 
+     RowBox[{
+     "y", " ", "and", " ", "z", " ", "axes", " ", "so", " ", "we", " ", "can",
+       " ", "easily", " ", "pick", " ", "which", " ", "axis", " ", "to", " ", 
+      "rotate", " ", "about"}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"ra", "=", 
+       RowBox[{"RotationMatrix", "[", 
+        RowBox[{"anglea", ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "]"}]}], ";", 
+      RowBox[{"(*", 
+       RowBox[{
+        RowBox[{"third", " ", "rotation"}], ",", " ", "z"}], "*)"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"xyzframe1a", "=", 
+       RowBox[{"transform3x3", "[", 
+        RowBox[{"ra", ",", "xyzframe0"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"rb", "=", 
+       RowBox[{"RotationMatrix", "[", 
+        RowBox[{"angleb", ",", 
+         RowBox[{"{", 
+          RowBox[{"1", ",", "0", ",", "0"}], "}"}]}], "]"}]}], ";", 
+      RowBox[{"(*", 
+       RowBox[{
+        RowBox[{"second", " ", "rotation"}], ",", " ", "x"}], "*)"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"xyzframe1b", "=", 
+       RowBox[{"transform3x3", "[", 
+        RowBox[{"rb", ",", "xyzframe1a"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"rc", "=", 
+       RowBox[{"RotationMatrix", "[", 
+        RowBox[{"anglec", ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "]"}]}], ";", 
+      RowBox[{"(*", 
+       RowBox[{
+        RowBox[{"third", " ", "rotation"}], ",", " ", "z"}], "*)"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"xyzframe1", "=", 
+       RowBox[{"transform3x3", "[", 
+        RowBox[{"rc", ",", "xyzframe1b"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"ralt", "=", 
+       RowBox[{"rc", ".", "rb", ".", "ra"}]}], ";", 
+      RowBox[{"(*", 
+       RowBox[{
+       "all", " ", "rotations", " ", "in", " ", "a", " ", "single", " ", "R", 
+        " ", "matrix"}], "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"xyzframe1alt", "=", 
+       RowBox[{"transform3x3", "[", 
+        RowBox[{"ralt", ",", "xyzframe0"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"forplotting1", "=", 
+       RowBox[{"frameDraw", "[", "xyzframe1", "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"pointplot1", "=", 
+       RowBox[{"ListPointPlot3D", "[", "forplotting1", "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"lineplot1", "=", 
+       RowBox[{"Graphics3D", "[", 
+        RowBox[{"{", 
+         RowBox[{"Blue", ",", 
+          RowBox[{"Line", "[", "forplotting1", "]"}]}], "}"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"forplotting1alt", "=", 
+       RowBox[{"frameDraw", "[", "xyzframe1alt", "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"pointplot1alt", "=", 
+       RowBox[{"ListPointPlot3D", "[", "forplotting1alt", "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"lineplot1alt", "=", 
+       RowBox[{"Graphics3D", "[", 
+        RowBox[{"{", 
+         RowBox[{"Green", ",", "Dashed", ",", 
+          RowBox[{"Line", "[", "forplotting1alt", "]"}]}], "}"}], "]"}]}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"Show", "[", 
+       RowBox[{
+       "frameplot", ",", "pointplot1", ",", "lineplot1", ",", "pointplot1alt",
+         ",", "lineplot1alt", ",", 
+        RowBox[{"PlotRange", "\[Rule]", "range"}], ",", 
+        RowBox[{"BoxRatios", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"1", ",", " ", "1", ",", " ", "1"}], "}"}]}]}], "]"}]}], 
+     "\[IndentingNewLine]", ",", 
+     RowBox[{"{", 
+      RowBox[{"anglea", ",", "0", ",", "Pi"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"angleb", ",", "0", ",", "Pi"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"anglec", ",", "0", ",", "Pi"}], "}"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.6329244834532948`*^9, 3.6329247291563*^9}, {
+  3.632924771131599*^9, 3.632924898395739*^9}, {3.632980535483485*^9, 
+  3.6329805386988*^9}}]
+},
+WindowSize->{808, 656},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 4, \
+2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 954, 26, 46, "Input"],
+Cell[CellGroupData[{
+Cell[1537, 50, 2575, 73, 233, "Input"],
+Cell[4115, 125, 901, 24, 404, "Output"]
+}, Open  ]],
+Cell[5031, 152, 1190, 34, 114, "Input"],
+Cell[6224, 188, 2337, 58, 233, "Input"],
+Cell[8564, 248, 3489, 90, 285, "Input"],
+Cell[12056, 340, 4633, 116, 420, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
