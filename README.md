@@ -11,6 +11,6 @@ Two ways to download the material:
 2. Download single files(s)
 -Click on the desired chapter (=github repository)
 -Click on the desired file
--Click on View Raw and follow browser's instructions for download
+-Click on View Raw and follow browser's instructions for download 
 
 
